@@ -1,5 +1,6 @@
-import { Grid3x3, User } from 'lucide-react'
+import { Grid3x3 } from 'lucide-react'
 import { Button } from './ui/button'
+import AuthButton from './AuthButton'
 
 export default function SearchHeader() {
   return (
@@ -23,9 +24,7 @@ export default function SearchHeader() {
         <Button variant="ghost" size="sm" className="p-2">
           <Grid3x3 className="h-5 w-5 text-gray-600" />
         </Button>
-        <Button variant="ghost" size="sm" className="p-2">
-          <User className="h-5 w-5 text-gray-600" />
-        </Button>
+        <AuthButton />
       </div>
     </header>
   )
