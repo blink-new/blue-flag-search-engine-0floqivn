@@ -66,13 +66,6 @@ export default function SearchBox({ onSearch, loading = false, variant = 'home' 
           >
             Blue Flag Search
           </Button>
-          <Button
-            type="button"
-            variant="outline"
-            className="px-6 py-2 bg-gray-50 border-gray-300 text-gray-700 hover:border-gray-400 hover:shadow-md transition-all duration-200"
-          >
-            I'm Feeling Lucky
-          </Button>
         </div>
       )}
     </form>
