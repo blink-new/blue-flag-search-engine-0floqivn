@@ -49,7 +49,14 @@ export default function SearchResults({ results, searchTime, totalResults, loadi
                   </Button>
                 </div>
                 <h3 className="text-xl text-blue-700 hover:underline cursor-pointer mb-1">
-                  {result.title}
+                  <a
+                    href={result.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 hover:underline focus:underline active:text-blue-900 transition-colors"
+                  >
+                    {result.title}
+                  </a>
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   {result.snippet}
