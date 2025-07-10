@@ -1,5 +1,3 @@
-import { Flag } from 'lucide-react'
-
 interface BlueFlagProps {
   size?: 'sm' | 'md' | 'lg'
   className?: string
@@ -12,19 +10,37 @@ export default function BlueFlag({ size = 'lg', className = '' }: BlueFlagProps)
     lg: 'w-24 h-24'
   }
 
-  const textSizes = {
-    sm: 'text-2xl',
-    md: 'text-4xl',
-    lg: 'text-6xl'
-  }
-
   return (
     <div className={`flex items-center justify-center ${className}`}>
-      <div className="relative">
-        <Flag className={`${sizeClasses[size]} text-blue-600 transform rotate-12`} fill="currentColor" />
-        <div className={`absolute inset-0 flex items-center justify-center ${textSizes[size]} font-bold text-white mix-blend-difference`}>
-          B
-        </div>
+      <div className={`${sizeClasses[size]} relative overflow-hidden rounded-sm border border-gray-300 shadow-sm`}>
+        {/* Scottish flag background (blue) */}
+        <div className="absolute inset-0 bg-blue-600"></div>
+        
+        {/* White diagonal cross (St. Andrew's Cross) */}
+        <svg 
+          className="absolute inset-0 w-full h-full" 
+          viewBox="0 0 100 100" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Diagonal line from top-left to bottom-right */}
+          <line 
+            x1="0" 
+            y1="0" 
+            x2="100" 
+            y2="100" 
+            stroke="white" 
+            strokeWidth="8"
+          />
+          {/* Diagonal line from top-right to bottom-left */}
+          <line 
+            x1="100" 
+            y1="0" 
+            x2="0" 
+            y2="100" 
+            stroke="white" 
+            strokeWidth="8"
+          />
+        </svg>
       </div>
     </div>
   )
